@@ -9,15 +9,21 @@
 
 <table class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Book</th>
-    </tr>
+        <tr>
+            <th>Book</th>
+            <th>Genre</th>
+            <th>Details</th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var book in Model)
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => book.Name)</td>
+            <td>@book.Genre.Name</td>
+            <td>
+                <a href="/books/details?bookId=@book.Id">Details</a>
+            </td>
         </tr>
     }
     </tbody>
